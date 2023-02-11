@@ -34,6 +34,23 @@ class _DisplayDataState extends State<DisplayData> {
                 Text(widget.post.body,
                     style: const TextStyle(
                         fontSize: 18, fontWeight: FontWeight.normal)),
+                const SizedBox(
+                  height: 20.0,
+                ),
+                const Text("Tags:",
+                    style:
+                        TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                const SizedBox(
+                  height: 5.0,
+                ),
+                Wrap(
+                  spacing: 8.0,
+                  children: widget.post.tags!
+                      .map((tag) => Chip(
+                            label: Text(tag),
+                          ))
+                      .toList(),
+                ),
               ],
             ),
           ),

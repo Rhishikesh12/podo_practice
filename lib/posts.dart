@@ -16,18 +16,21 @@ class Post {
   int id;
   String title;
   String body;
+  List<String>? tags;
 
   Post(
       {required this.id,
       required this.body,
       required this.title,
-      required this.userId});
+      required this.userId,
+      required this.tags});
 
   factory Post.fromJson(Map<String, dynamic> json) {
     return Post(
         id: json['id'],
         body: json['body'],
         title: json['title'],
-        userId: json['userId']);
+        userId: json['userId'],
+        tags: json['tags'].cast<String>());
   }
 }
